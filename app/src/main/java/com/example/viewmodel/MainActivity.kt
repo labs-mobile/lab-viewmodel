@@ -4,10 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var scoreViewModel: ScoreViewModel
+    private val scoreViewModel: ScoreViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 //            value++
 //            score.setText(value.toString())
 //        }
-        scoreViewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
+        //scoreViewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
 
         val change = findViewById<Button>(R.id.change)
 
